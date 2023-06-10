@@ -27,24 +27,6 @@ export default class TodoList extends Component {
                             All
                         </button>
                     </div>
-                    {/*<div className="col-md-4">*/}
-                    {/*    <button*/}
-                    {/*        type="button"*/}
-                    {/*        className="btn btn-info btn-block mt-1"*/}
-                    {/*        onClick={() => updateTodosToShow("done")}*/}
-                    {/*    >*/}
-                    {/*        Done*/}
-                    {/*    </button>*/}
-                    {/*</div>*/}
-                    {/*<div className="col-md-4">*/}
-                    {/*    <button*/}
-                    {/*        type="button"*/}
-                    {/*        className="btn btn-info btn-block mt-1"*/}
-                    {/*        onClick={() => updateTodosToShow("todo")}*/}
-                    {/*    >*/}
-                    {/*        Todo*/}
-                    {/*    </button>*/}
-                    {/*</div>*/}
                 </div>
 
                 {
@@ -65,27 +47,6 @@ export default class TodoList extends Component {
                                     )
                                 })
                             }
-
-                            {/*<div className="row mt-4">*/}
-                            {/*    <div className="col-md-6">*/}
-                            {/*        <button*/}
-                            {/*            type="button"*/}
-                            {/*            className="btn btn-danger btn-block mt-1"*/}
-                            {/*            onClick={handleDeleteDoneTasks}*/}
-                            {/*        >*/}
-                            {/*            Delete done tasks*/}
-                            {/*        </button>*/}
-                            {/*    </div>*/}
-                            {/*    <div className="col-md-6">*/}
-                            {/*        <button*/}
-                            {/*            type="button"*/}
-                            {/*            className="btn btn-danger btn-block mt-1"*/}
-                            {/*            onClick={clearList}*/}
-                            {/*        >*/}
-                            {/*            Delete all tasks*/}
-                            {/*        </button>*/}
-                            {/*    </div>*/}
-                            {/*</div>*/}
                         </ul>
                 }
             </Fragment>

@@ -3,6 +3,7 @@ import { v1 as uuid } from 'uuid'
 
 import TodoInput from './components/TodoInput'
 import TodoList from './components/TodoList'
+
 import Weather from './components/Weather';
 import Input from './components/WeatherInput';
 
@@ -25,7 +26,7 @@ class App extends Component {
 	}
 
 	getWeather = query => {
-		axios.get('https://api.openweathermap.org/data/2.5/find?q=${query}&units=metric&appid=c4b2e1361fac39b9a24cc90848cddb5d')
+		axios.get('https://api.openweathermap.org/data/2.5/find?q=jerusalem&units=metric&appid=c4b2e1361fac39b9a24cc90848cddb5d')
 			.then(response => {
 				this.setState({
 					weather: response.data.list[0],
@@ -140,18 +141,17 @@ class App extends Component {
 							handleDoneTask={this.handleDoneTask}
 							updateTodosToShow={this.updateTodosToShow}
 						/>
+						
 					</div>
 				</div>
-				<div>
-					<div className='content'>
-						<Input queryWeather={this.queryWeather} />
+				<div className="row">
+					<div className="col-10 col-md-8 mx-auto mt-4">
+						<h3 className="text-capitalize text-center">weather</h3>
+						<Weather getWeather={this.getWeather('jerusalem')} city={this.state.weather.name} temp={this.state.temp} clouds={this.state.clouds} />
 					</div>
-					<Weather
-						city={this.state.weather.name}
-						temp={this.state.temp}
-						clouds={this.state.clouds} />
 				</div>
 			</div>
+			
 		);
 	}
 }

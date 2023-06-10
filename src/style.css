@@ -1,9 +1,9 @@
-* {
-    font-family: lato;
-    margin: 0;
+/** {*/
+    /*font-family: lato;*/
+    /*margin: 0;
     margin-bottom: 2em;
     padding: 0;
-}
+}*/
 
 .content {
     padding-top: 2em;
@@ -22,7 +22,7 @@ input {
 
     .weather p:nth-child(odd) {
         margin-right: 1em;
-        text-align: right;
+        text-align: left;
         width: 49vw;
     }
 
