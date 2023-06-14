@@ -1,4 +1,16 @@
-    
+.App {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 100px 1fr auto;
+    gap: 0px 0px;
+    grid-template-areas:
+        "Header Header Header"
+        "Main Main Main"
+        "Footer Footer Footer";
+    height: 100vh;
+    overflow: hidden;
+}
+
 .completed-task {
     text-decoration: line-through;
     color: #db3545;
@@ -7,8 +19,8 @@
 main {
     grid-area: Main;
     display: flex;
-    flex-direction: column;
-    padding-top: 64px;
+    flex-direction: row;
+    padding-top: 256px;
     padding-left: 32px;
     padding-right: 32px;
     align-items: center;
@@ -17,6 +29,8 @@ main {
 header {
     grid-area: Header;
     padding: 12px 24px;
+    display: block;
+    align-items: stretch;
 }
 
 #TodoList {
@@ -111,3 +125,19 @@ header {
     .weather p:nth-child(even) {
         width: 10vw;
     }
+
+.card {
+    background: whitesmoke;
+    width: fit-content;
+    height: fit-content;
+    display: grid;
+    align-items: start;
+    flex-direction: row;
+    border-radius: 10px;
+    padding: 10px 10px;
+    box-shadow: 10px 10px;
+}
+
+.h3 {
+    font-size: 18px;
+}
