@@ -1,15 +1,16 @@
 import React from 'react';
+import '/Users/User/source/repos/reactproject/reactproject/src/index.css'
 
 const Weather = props =>
     <div className='weather'>
-        <p>City: </p>
-        <p>{props.city}</p>
+        <h3>Weather in: </h3>
+        <h4 className="h4">{props.city}</h4>
 
-        <p>Temperature: </p>
-        <p>{props.temp}</p>
+        <h3>Temperature: </h3>
+        <h4 className="h4">{props.temp}</h4>
 
-        <p>Sky: </p>
-        <p>{props.clouds}</p>
+        <h3>Sky: </h3>
+        <h4 className="h4">{props.clouds}</h4>
     </div>
 
 export default Weather;
