@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
 import Weather from './Weather/Weather';
-
+import ImageList from './backgroundImage/imageList';
+import unsplash from './api/unsplash';
 import axios from 'axios';
 import TodoList from './TodoList/TodoList';
-import Quote from './Quote/Quote';
 import './index.css';
+
 
 class App extends Component {
 	constructor(props) {
@@ -13,12 +14,27 @@ class App extends Component {
 			weather: [],
 			temp: [],
 			clouds: [],
-			quote: ''
+			quote: '',
+			images: [],
+			imageIndex: 0
 		}
 	}
 	componentDidMount() {
 		this.fetchQuote();
+		this.getWeather();
+		this.getImages();
 	}
+
+	getImages = async () => {
+		const term = 'views';
+		const response = await unsplash.get('/search/photos', {
+			params: { query: term, page: 1, per_page: 10}
+		});
+
+		this.setState({
+			images: response.data.results,
+		});
+	};
 
 	fetchQuote = () => {
 		axios.get('https://api.adviceslip.com/advice')
@@ -55,12 +71,13 @@ class App extends Component {
 		}
 	};
 
+
 	render() {
 
 		return (
 			<div className="App">
+				<ImageList getImages={this.getImages} images={this.state.images} />
 				<header>
-					<h3 className="text-capitalize">weather</h3>
 					<Weather getWeather={this.getWeather} city={this.state.weather.name} temp={this.state.temp} clouds={this.state.clouds} />
 					<div className="card">
 						<h3 className="text-capitalize h3">
@@ -73,6 +90,7 @@ class App extends Component {
 						<TodoList />
 					</div>
 				</main>
+				<footer/>
 			</div>
 			
 		);

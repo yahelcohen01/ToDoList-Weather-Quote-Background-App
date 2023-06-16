@@ -28,7 +28,7 @@ const TodoList = () => {
                     <input
                         type="text"
                         className="form-control"
-                        placeholder="enter task"
+                        placeholder="Enter task(Up to 7)"
                         value={newTodoListEntry}
                         onChange={(e) => {
                             setNewTodoListEntry(e.target.value);

@@ -9,7 +9,9 @@ export const TodoListSlice = createSlice({
     },
     reducers: {
         addTodoEntry: (state, action) => {
-            state.entries.push({ text: action.payload, isDone: false });
+            if (state.entries.length <= 6) {
+                state.entries.push({ text: action.payload, isDone: false });
+            }
         },
         removeEntry: (state, action) => {
             state.entries.splice(action.payload, 1);
