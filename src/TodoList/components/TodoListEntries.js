@@ -4,7 +4,7 @@ import TodoListEntry from "./TodoListEntry";
 const TodoListEntries = ({ entries }) => {
 
     return (
-        <div className="surface">
+        <div className="theme">
             <ul className="entries-list">
                 {entries.map(({ text, isDone }, index) => (
                     <li

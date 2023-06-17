@@ -2,7 +2,7 @@ import React from 'react';
 import '/Users/User/source/repos/reactproject/reactproject/src/index.css'
 
 const Weather = props =>
-    <div className='weather'>
+    <div className='card'>
         <h3>Weather in: </h3>
         <h4 className="h4">{props.city}</h4>
 

@@ -1,7 +1,7 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import { removeEntry, toggleEntryDone } from "../TodoListSlice";
-import Confetti from "react-dom-confetti";
+import ConfettiExplosion from 'react-confetti-explosion';
 
 const TodoListEntry = ({ children, id, isDone }) => {
     const dispatch = useDispatch();
@@ -24,7 +24,7 @@ const TodoListEntry = ({ children, id, isDone }) => {
                     }}
                 >
                     {isDone ? "Redo" : "Done"}
-                    <Confetti active={isDone} config={{ spread: 360 }} />
+                    {isDone && <ConfettiExplosion />}
                 </button>
             </div>
             {children}

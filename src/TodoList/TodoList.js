@@ -21,14 +21,14 @@ const TodoList = () => {
 
     return (
         <>
-            <div id="TodoList" className="surface">
+            <div id="TodoList" className="">
                 <h2>Todo List App</h2>
 
                 <form onSubmit={onFormSubmit}>
                     <input
                         type="text"
                         className="form-control"
-                        placeholder="Enter task(Up to 7)"
+                        placeholder="Enter task(Up to 10)"
                         value={newTodoListEntry}
                         onChange={(e) => {
                             setNewTodoListEntry(e.target.value);

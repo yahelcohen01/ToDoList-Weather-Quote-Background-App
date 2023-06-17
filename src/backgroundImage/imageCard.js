@@ -12,8 +12,9 @@ class ImageCard extends React.Component {
 
     render() {
         return (
-            <div>
+            <div id="background-image-container">
                 <img
+                    id="background-image"
                     ref={this.imageRef}
                     src={this.props.image.urls.regular}
                     alt={this.props.image.description}

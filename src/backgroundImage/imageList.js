@@ -3,17 +3,7 @@ import ImageCard from './imageCard';
 import '/Users/User/source/repos/reactproject/reactproject/src/index.css'
 
 const ImageList = (props) => {
-
-    //const images = props.images.map((image) => (
-    //    <ImageCard key={image.id} image={image} />
-    //));
-    //return (
-    //    <>
-    //        <div className="background-image-container">{images[0]}</div>
-    //        <Number />
-    //    </>
-    //);
-
+    //mapping the images array to local var and creating image instance to each image
     const images = props.images.map((image) => (
         <ImageCard key={image.id} image={image} />
     ));
@@ -29,7 +19,7 @@ const ImageList = (props) => {
         const interval = setInterval(() => {
             // generate random number between 0 and 9
             setNum(randomNumberInRange(0, 9));
-        }, 5000); // runs every 5 second
+        }, 10000); // runs every 10 second
 
         return () => {
             clearInterval(interval);
@@ -37,7 +27,7 @@ const ImageList = (props) => {
     }, []);
     return (
         <div>
-            <div className="background-image-container">{images[parseInt(num)]}</div>
+            <div >{images[parseInt(num)]}</div> {/*display the background image*/ }
         </div>
     );
 };

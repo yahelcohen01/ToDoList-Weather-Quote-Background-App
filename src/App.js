@@ -26,7 +26,7 @@ class App extends Component {
 	}
 
 	getImages = async () => {
-		const term = 'views';
+		const term = 'sunny';
 		const response = await unsplash.get('/search/photos', {
 			params: { query: term, page: 1, per_page: 10}
 		});
@@ -86,7 +86,7 @@ class App extends Component {
 					</div>
 				</header>
 				<main>
-					<div className="row">
+					<div className="theme">
 						<TodoList />
 					</div>
 				</main>
