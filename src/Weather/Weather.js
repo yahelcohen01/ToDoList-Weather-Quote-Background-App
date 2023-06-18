@@ -1,6 +1,7 @@
 import React from 'react';
 import '/Users/User/source/repos/reactproject/reactproject/src/index.css'
 
+//function represent the weather card
 const Weather = props =>
     <div className='card'>
         <h3>Weather in: </h3>

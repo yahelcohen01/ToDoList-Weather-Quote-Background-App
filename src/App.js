@@ -15,40 +15,40 @@ class App extends Component {
 			temp: [],
 			clouds: [],
 			quote: '',
-			images: [],
-			imageIndex: 0
+			images: []
 		}
 	}
+	// after the first iteration the app will render those functions
 	componentDidMount() {
 		this.fetchQuote();
 		this.getWeather();
 		this.getImages();
 	}
 
+	// Function to get images from UnsplashAPI 
 	getImages = async () => {
-		const term = 'sunny';
-		const response = await unsplash.get('/search/photos', {
-			params: { query: term, page: 1, per_page: 10}
-		});
+		const term = 'sunny'; //search filter
+		const response = await unsplash.get('/search/photos', { params: { query: term, page: 1, per_page: 10} });
 
 		this.setState({
 			images: response.data.results,
 		});
 	};
 
+	//Function to get Quote from adviceslip API with Axios Client
 	fetchQuote = () => {
-		axios.get('https://api.adviceslip.com/advice')
-			.then((response) => {
-				const { advice } = response.data.slip;
+		axios.get('https://api.adviceslip.com/advice').then((response) => {
+			const { advice } = response.data.slip;
 
 				this.setState({ quote: advice });
 			})
 
 			.catch((error) => {
-				console.log(error);
+				console.log('Error', error);
 			})
 	}
 
+	//Function to get weather info from openweathermap API with Axios Client
 	getWeather = () => {
 		axios.get('https://api.openweathermap.org/data/2.5/find?q=jerusalem&units=metric&appid=c4b2e1361fac39b9a24cc90848cddb5d')
 			.then(response => {
@@ -61,16 +61,7 @@ class App extends Component {
 			.catch(error => {
 				console.log('Error', error);
 			});
-	};
-
-	queryWeather = (event, cityName) => {
-		if (event.key === 'Enter') {
-			event.preventDefault();
-			cityName = event.target.value;
-			this.getWeather(cityName);
-		}
-	};
-
+	}; 
 
 	render() {
 

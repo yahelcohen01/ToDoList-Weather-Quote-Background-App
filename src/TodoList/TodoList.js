@@ -3,11 +3,13 @@ import { useDispatch, useSelector } from "react-redux";
 import TodoListEntries from "./components/TodoListEntries";
 import { addTodoEntry } from "./TodoListSlice";
 
+//function that returns the final form of the Todo list section in the app
 const TodoList = () => {
-    const [newTodoListEntry, setNewTodoListEntry] = useState("");
-    const { entries } = useSelector((state) => state.TodoList);
+    const [newTodoListEntry, setNewTodoListEntry] = useState(""); //setting new state which is the input 
+    const { entries } = useSelector((state) => state.TodoList); //
     const dispatch = useDispatch();
 
+    
     const onFormSubmit = (e) => {
         e.preventDefault();
 
@@ -15,7 +17,7 @@ const TodoList = () => {
             return;
         }
 
-        dispatch(addTodoEntry(newTodoListEntry));
+        dispatch(addTodoEntry(newTodoListEntry)); //add new entry for the list
         setNewTodoListEntry("");
     };
 
@@ -25,17 +27,8 @@ const TodoList = () => {
                 <h2>Todo List App</h2>
 
                 <form onSubmit={onFormSubmit}>
-                    <input
-                        type="text"
-                        className="form-control"
-                        placeholder="Enter task(Up to 10)"
-                        value={newTodoListEntry}
-                        onChange={(e) => {
-                            setNewTodoListEntry(e.target.value);
-                        }}
-                        aria-label="New TodoList entry"
-                    />
-
+                    <input type="text" className="form-control" placeholder="Enter task(Up to 10)" value={newTodoListEntry} aria-label="New TodoList entry"
+                           onChange={(e) => { setNewTodoListEntry(e.target.value); }}/>
                 </form>
             </div>
             <TodoListEntries entries={entries} />

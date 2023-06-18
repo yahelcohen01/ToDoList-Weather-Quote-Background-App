@@ -1,5 +1,6 @@
 import React from 'react';
 
+//class to contain the images info and return image instance
 class ImageCard extends React.Component {
     constructor(props) {
         super(props);

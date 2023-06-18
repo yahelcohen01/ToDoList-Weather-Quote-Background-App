@@ -1,5 +1,5 @@
 ﻿import React, { useState, useEffect } from 'react';
-import ImageCard from './imageCard';
+import ImageCard from './components/imageCard';
 import '/Users/User/source/repos/reactproject/reactproject/src/index.css'
 
 const ImageList = (props) => {
